@@ -5,8 +5,6 @@ function generateAlphabet(charCode=97){
 	return ''.concat(String.fromCharCode(charCode))
 					.concat(generateAlphabet(++charCode));
 };
-console.log(generateAlphabet());
-
 
 function fearNotLetter(str) {
 	let alphabet = generateAlphabet().split('');
@@ -18,10 +16,10 @@ function fearNotLetter(str) {
 				.charCodeAt(0));
 	
 	let locateMissingLetter = alphabetCharCodes
-									.map((charCode,index,arry) => 
-										charCode + 1 === arry[index + 1] ? 
-										charCode : 
-										String.fromCharCode(charCode + 1));	
+					.map((charCode,index,arry) => 
+						charCode + 1 === arry[index + 1] ? 
+						charCode : 
+						String.fromCharCode(charCode + 1));	
 	return locateMissingLetter; 
 }
 
